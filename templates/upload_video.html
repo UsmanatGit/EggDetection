@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+</head>
+<body>
+
+  <div>
+        <a href="/home">Home</a>
+        <a href="/webcam">Live Detection</a>
+        <form action="/stop_streaming" method="post">
+            <button type="submit">Stop Streaming</button>
+        </form>
+    </div>
+
+    <div id="video-container">
+        <img id="video" src="{{ url_for('upload_video') }}" alt="Upload video">
+    </div>
+
+    <div>
+        <form method='POST' enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.file(class_="custom-file-input") }}
+            <button type="submit" name="favorite" value="x">
+                Submit
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
